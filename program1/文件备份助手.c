@@ -38,7 +38,7 @@ GtkWidget *entry_from;
 GtkWidget *entry_goto;
 GtkWidget *label_tishi;
 FILE *fp2;
-static void ppt()
+static void ppt()//按键扫描函数
 {    
        char filecount[200] = {0};
        char *name1 = gtk_entry_get_text(entry_from);
@@ -49,19 +49,19 @@ static void ppt()
 	   huanxiegang(name);
        filescan1(name);  
 	   fclose(fp2);
-	   sprintf(filecount,"扫描完成，共有 %d 个文件 \n详情请见filelist.txt",num);	  
+	   sprintf(filecount, ANSIToUTF8("扫描完成，共有 %d 个文件 \n详情请见filelist.txt"),num);
 	}
 	else
 	{ 
 	  fp2 = fopen("filelist.txt","wt");
 	  filescan1("");
 	  fclose(fp2);
-	  sprintf(filecount,"未输入扫描地址\n如果继续选择备份将复制本程序目录,当前目录下有%d个文件\n详情请见filelist.txt",num);
+	  sprintf(filecount, ANSIToUTF8("未输入扫描地址\n如果继续选择备份将复制本程序目录,当前目录下有%d个文件\n详情请见filelist.txt"),num);
 	}
      gtk_label_set_text(label_tishi,filecount);
 	 
 }
-static void ppt2()
+static void ppt2()//按键复制函数
 {
     char filecount[100] = {0};
     char *name1 = gtk_entry_get_text(entry_from);
@@ -94,10 +94,10 @@ static void ppt2()
 	  { 
 	    filescan("",saveload);
 	  }
-	 filescan("",saveload);
+	 //filescan("",saveload);
 	// sprintf(filecount,"未输入扫描地址\n如果继续选择复制将复制本程序目录,当前目录下有%d个文件",num);
 	}
-	 gtk_label_set_text(label_tishi,"文件备份成功");
+	 gtk_label_set_text(label_tishi, ANSIToUTF8("文件备份成功"));
 }
 
 int main( int argc, char *argv[])
@@ -131,22 +131,22 @@ int main( int argc, char *argv[])
   entry_from = gtk_entry_new();
   gtk_grid_attach(Grid1,entry_from, 0,0,10,1);
   gtk_widget_show(entry_from);
-  gtk_entry_set_placeholder_text(entry_from,"请输入扫描地址"); 
+  gtk_entry_set_placeholder_text(entry_from, ANSIToUTF8("请输入扫描地址"));
   //文件地址输出文本框
   entry_goto = gtk_entry_new();
   gtk_grid_attach(Grid1,entry_goto, 0,1,10,1);
   gtk_widget_show(entry_goto);
-  gtk_entry_set_placeholder_text(entry_goto,"请输入备份地址");
+  gtk_entry_set_placeholder_text(entry_goto, ANSIToUTF8("请输入备份地址"));
   //标签提示
-  label_from = gtk_label_new("文件目录");
+  label_from = gtk_label_new(ANSIToUTF8("文件目录"));
   gtk_grid_attach(Grid1,label_from, 10,0,1,1);
   gtk_widget_show(label_from);
   //标签提示
-  label_goto = gtk_label_new("备份目录");
+  label_goto = gtk_label_new(ANSIToUTF8("备份目录"));
   gtk_grid_attach(Grid1,label_goto, 10,1,1,1);
   gtk_widget_show(label_goto);
    //标签提示
-  label_tishi = gtk_label_new("输入文件地址扫描或备份");
+  label_tishi = gtk_label_new(ANSIToUTF8("输入文件地址扫描或备份"));
   gtk_grid_attach(Grid1,label_tishi, 0,2,20,2);
   gtk_widget_show(label_tishi);
   //按钮
@@ -154,7 +154,7 @@ int main( int argc, char *argv[])
   gtk_grid_attach(Grid1,button_scan, 11,0,1,1);
   gtk_widget_show(button_scan);
   //按钮
-  button_copy = gtk_button_new_with_label("备份");
+  button_copy = gtk_button_new_with_label(ANSIToUTF8("备份"));
   gtk_grid_attach(Grid1,button_copy, 11,1,1,1);
   gtk_widget_show(button_copy);
 
