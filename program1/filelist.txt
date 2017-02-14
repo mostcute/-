@@ -1,0 +1,34 @@
+
+Document Folder    Debug
+
+Debug/program1.Build.CppClean.log
+Debug/program1.log
+
+Document Folder    Debug/program1.tlog
+
+Debug/program1.tlog/CL.command.1.tlog
+Debug/program1.tlog/CL.read.1.tlog
+Debug/program1.tlog/CL.write.1.tlog
+Debug/program1.tlog/link.command.1.tlog
+Debug/program1.tlog/link.read.1.tlog
+Debug/program1.tlog/link.write.1.tlog
+Debug/program1.tlog/program1.lastbuildstate
+Debug/vc140.idb
+Debug/vc140.pdb
+Debug/文件备份助手.obj
+/filelist.txt
+/program1.vcxproj
+/program1.vcxproj.filters
+/program1.vcxproj.user
+
+Document Folder    Release
+
+Release/program1.log
+
+Document Folder    Release/program1.tlog
+
+Release/program1.tlog/CL.command.1.tlog
+Release/program1.tlog/program1.lastbuildstate
+Release/program1.tlog/unsuccessfulbuild
+Release/vc140.pdb
+/文件备份助手.c
